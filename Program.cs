@@ -17,8 +17,8 @@ var host = new HostBuilder()
         var blobServiceClient = new BlobServiceClient(configuration.GetConnectionString("AzureWebJobsStorage"));
         services.AddSingleton(blobServiceClient);
         
-        // var cosmosServiceClient = new CosmosClient(configuration.GetConnectionString("CosmosDBConnection"));
-        // services.AddSingleton(cosmosServiceClient);
+        var cosmosServiceClient = new CosmosClient(configuration.GetConnectionString("CosmosDBConnection"));
+        services.AddSingleton(cosmosServiceClient);
     })
     .Build();
 
